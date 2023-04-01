@@ -1,0 +1,21 @@
+{% extends 'AppEntrega/index.html' %}
+
+{% block title %}Song List{% endblock %}
+
+{% block content %}
+<form>
+    <p>
+        <label for="criterio_song">Search a song:</label>
+        <input type="text" name="criterio_song" maxlength="100" required="" id="criterio_song">   
+      </p> 
+      <p>
+        <input type="submit" value="Buscar">
+      </p>
+</form>
+
+<ul>
+    {%  for song in songs %}
+            <li>{{song}}</li>
+        {% endfor %}
+</ul>
+{% endblock %}

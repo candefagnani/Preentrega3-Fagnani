@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        {% block header %}
+        <h1 style="color:deeppink"><center>Broadway Musicals</center></h1>
+        <nav>
+            {% block nav %}
+            <ul><horizontal>
+                <li><a href="{% url 'song_create' %}">Create Song</a></li>
+                <li><a href="{% url 'artist_create' %}">Create Artist</a></li>
+                <li><a href="{% url 'musical_create' %}">Create Musical</a></li>
+                <li><a href="{% url 'song-search' %}">Search Song</a></li>
+            </ul></horizontal>
+            {% endblock %}
+        </nav>
+        <center><img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/6e/df/0d.jpg" alt="Broadway"></center>
+
+        {% endblock %}
+    </header>
+
+    
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        {% block footer %}
+        <p>© 2023 My Website. All rights reserved.</p>
+        {% endblock %}
+    </footer>
+</body>
+</html>

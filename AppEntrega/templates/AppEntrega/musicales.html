@@ -1,0 +1,18 @@
+{% extends 'AppEntrega/index.html' %}
+
+{% block title %}Create Musical{% endblock %}
+
+{% block content %}
+    <h2>Create Musical</h2>
+
+    <form action = "{% url 'musical_create' %}" method = "POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+        <ul> 
+            {% for musical in musicals %}
+                <li>{{musical}}</li>
+            {%endfor%}
+        </ul>
+{% endblock %}
